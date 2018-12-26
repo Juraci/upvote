@@ -16,18 +16,18 @@
     <div class="section">
       <article class="media">
         <figure class="media-left">
-          <img class="image is-64x64" src="../public/images/submissions/image-yellow.png">
+          <img class="image is-64x64" v-bind:src="submissions[0].submissionImage">
         </figure>
         <div class="media-content">
           <div class="content">
             <p>
               <strong>
-                <a href="#" class="has-text-info">Yellow Pail</a>
+                <a v-bind:href="submissions[0].url" class="has-text-info">Yellow Pail</a>
                 <span class="tag is-small">#4</span>
               </strong>
-              <br>On-Demand sand castle construction expertise.</br>
+              <br>{{ submissions[0].description }}</br>
               <small class="is-size-7">
-                Submitted by: <img src="../public/images/avatars/daniel.jpg" class="image is-24x24">
+                Submitted by: <img v-bind:src="submissions[0].avatar" class="image is-24x24">
               </small>
             </p>
           </div>
