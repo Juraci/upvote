@@ -4,8 +4,14 @@ new Vue({
     submissions: Seed.submissions
   },
   computed: {
-    sortedSubmissions () {
+    sortedSubmissions() {
       return this.submissions.sort((a, b) => { return b.votes - a.votes });
+    }
+  },
+  methods: {
+    upvote(submissionId) {
+      const submission = this.submissions.find(submission => submission.id === submissionId);
+      submission.votes++;
     }
   }
 });
