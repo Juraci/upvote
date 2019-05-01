@@ -5,9 +5,16 @@ new Vue({
   },
   computed: {
     sortedSubmissions() {
-      return this.submissions.sort((a, b) => {
+      const sorted = this.submissions;
+      return sorted.sort((a, b) => {
         return b.votes - a.votes;
       });
+    }
+  },
+  methods: {
+    upvote(id) {
+      const item = this.submissions.find(item => item.id === id);
+      item.votes++;
     }
   }
 });
